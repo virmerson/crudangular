@@ -4,10 +4,7 @@ import bo.ClienteBO;
 import model.Cliente;
 
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -31,12 +28,15 @@ public class ClienteResource {
     @POST
     @Path("/salvar")
     @Consumes("application/json")
-    public void salvar(Cliente cliente){
+    @Produces("application/json")
+    public Response salvar(Cliente cliente){
         clienteBO.salvar(cliente);
+        return Response.status(200).entity(cliente).build();
     }
 
     @GET
     @Path("/lista")
+    @Produces("application/json")
     public Response lista(){
 
         return Response.status(200).entity(clienteBO.lista()).build();
