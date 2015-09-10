@@ -1,6 +1,7 @@
 package app;
 
 import rest.ClienteResource;
+import rest.ProdutoResource;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -19,6 +20,7 @@ public class CrudAngularApplication extends Application {
     public Set<Class<?>> getClasses(){
         Set<Class<?>> classes = new HashSet<Class<?>>();
         classes.add(ClienteResource.class);
+        classes.add(ProdutoResource.class);
         return  classes;
     }
 }
