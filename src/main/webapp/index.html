@@ -1,5 +1,22 @@
-<html>
-<body>
+<html ng-app="appCrudAngular">
+<head>
+
+
+    <link rel="stylesheet" href="js/bower_components/angular/angular-csp.css">
+    <script src="js/bower_components/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+
+<body ng-controller="ClienteCtrl">
 <h2>Hello World Curso Angular JS UCDB!</h2>
+
+<ul>
+
+    <li ng-repeat="cliente in clientes">
+
+        {{ cliente.nome +" - " + cliente.email }}
+    </li>
+</ul>
+
 </body>
 </html>
