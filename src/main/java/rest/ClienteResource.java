@@ -19,10 +19,12 @@ public class ClienteResource {
     @Inject
     ClienteBO clienteBO;
 
-    @POST
-    @Path("/test")
+    @GET
+    @Path("/init")
     public void teste(){
-        System.out.println("OK");
+
+
+
     }
 
     @POST
@@ -40,5 +42,11 @@ public class ClienteResource {
     public Response lista(){
 
         return Response.status(200).entity(clienteBO.lista()).build();
+    }
+
+    @DELETE
+    @Path("/remover/{indice}")
+    public void remover (@PathParam("indice") Integer indice){
+        clienteBO.remover(indice);
     }
 }

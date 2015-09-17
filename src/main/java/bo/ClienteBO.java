@@ -15,6 +15,17 @@ public class ClienteBO {
    static  List<Cliente> clientes = new ArrayList<Cliente>();
     static long id =1 ;
 
+    {
+
+        clientes.add(new Cliente("Jão", "j@gmail.com"));
+        clientes.add(new Cliente("Zé", "ze@gmail.com"));
+        clientes.add(new Cliente("Maria", "maria@gmail.com"));
+
+    }
+
+    public ClienteBO(){
+        }
+
     public void salvar(Cliente cliente){
         cliente.setId(id++);
         clientes.add(cliente);
@@ -22,5 +33,9 @@ public class ClienteBO {
 
     public List<Cliente> lista(){
         return clientes;
+    }
+
+    public void remover(int indice){
+        clientes.remove(indice);
     }
 }
