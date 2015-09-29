@@ -1,15 +1,25 @@
 /**
  * Created by Virmerson on 14/09/15.
  */
+'use strict';
 
-    //Aplicacao
-var appCrudAngular =  angular.module('appCrudAngular', []);
+var appControllers =  angular.module('appControllers', []);
 
 //Um controller dela
-appCrudAngular.controller('ClienteCtrl', function ($scope){
+appControllers.controller('ClienteCtrl', function ($scope, $http){
 
-    $scope.clientes = [ {'nome':'Jão', 'email': 'jao@gmail.com'} ,
+  /*   $scope.clientes = [ {'nome':'Jão', 'email': 'jao@gmail.com'} ,
                         {'nome': 'Maria', 'email':'maria@gmail.com' } ,
-                        {'nome': 'Zé', 'email': 'ze@gmail.com'}];
+                        {'nome': 'Zé', 'email': 'ze@gmail.com'}]; */
+
+    $scope.clientes = {};
+    $http.get("ws/cliente/lista").success( function (dados){
+         $scope.clientes = dados;
+    });
 
 } );
+
+
+
+
+

@@ -15,16 +15,14 @@ public class ClienteBO {
    static  List<Cliente> clientes = new ArrayList<Cliente>();
     static long id =1 ;
 
-    {
-
-        clientes.add(new Cliente("Jão", "j@gmail.com"));
-        clientes.add(new Cliente("Zé", "ze@gmail.com"));
-        clientes.add(new Cliente("Maria", "maria@gmail.com"));
+    public ClienteBO() {
+        if (clientes.size()==0) {
+            clientes.add(new Cliente("Jão do banco", "j@gmail.com"));
+            clientes.add(new Cliente("Zé", "ze@gmail.com"));
+            clientes.add(new Cliente("Maria", "maria@gmail.com"));
+        }
 
     }
-
-    public ClienteBO(){
-        }
 
     public void salvar(Cliente cliente){
         cliente.setId(id++);

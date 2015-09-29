@@ -45,8 +45,8 @@ public class ClienteResource {
     }
 
     @DELETE
-    @Path("/remover/{indice}")
-    public void remover (@PathParam("indice") Integer indice){
+    @Path("/{indice}")
+    public void remover (@PathParam("indice") int indice){
         clienteBO.remover(indice);
     }
 }
