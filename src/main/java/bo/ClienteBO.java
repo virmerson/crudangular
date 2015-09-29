@@ -17,9 +17,9 @@ public class ClienteBO {
 
     public ClienteBO() {
         if (clientes.size()==0) {
-            clientes.add(new Cliente("Jão do banco", "j@gmail.com"));
-            clientes.add(new Cliente("Zé", "ze@gmail.com"));
-            clientes.add(new Cliente("Maria", "maria@gmail.com"));
+            salvar(new Cliente("Jão do banco", "j@gmail.com"));
+            salvar(new Cliente( "Zé", "ze@gmail.com"));
+            salvar(new Cliente( "Maria", "maria@gmail.com"));
         }
 
     }

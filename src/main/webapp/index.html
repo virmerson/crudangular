@@ -13,10 +13,33 @@
 
 <ul>
 
+    <form>
+
+        Id:
+        <input type="text" ng-model="cliente.id" />
+
+
+        Nome:
+        <input type="text" ng-model="cliente.nome" />
+
+        E-mail:
+        <input type="text" ng-model="cliente.email" />
+
+        <button ng-click="salvar()"> Salvar </button>
+    </form>
+
+
     <li ng-repeat="cliente in clientes">
 
-        {{ cliente.nome +" - " + cliente.email }}
+        {{cliente.id + " "+ cliente.nome +" - " + cliente.email }}
+        <button ng-click="excluir(cliente.id)"> Excluir </button>
+        <button ng-click="editar(cliente)"> Editar </button>
     </li>
+
+
+
+
+
 </ul>
 
 </body>

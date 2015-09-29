@@ -44,9 +44,17 @@ public class ClienteResource {
         return Response.status(200).entity(clienteBO.lista()).build();
     }
 
-    @DELETE
+    /* @DELETE
     @Path("/{indice}")
     public void remover (@PathParam("indice") int indice){
         clienteBO.remover(indice);
+    }*/
+
+    @DELETE
+    @Consumes("application/json")
+    @Produces("application/json")
+    @Path("/excluir/{id}")
+    public void excluir (@PathParam("id") int id){
+        System.out.println(id);
     }
 }
