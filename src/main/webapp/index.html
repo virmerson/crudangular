@@ -3,44 +3,67 @@
 
 
     <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
+
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+
+
 </head>
 
 <body ng-controller="ClienteCtrl">
 <h2>Hello World Curso Angular JS UCDB!</h2>
 
-<ul>
+
 
     <form>
 
         Id:
-        <input type="text" ng-model="cliente.id" />
+        <input type="text" ng-model="cliente.id"/>
 
 
-        Nome:
-        <input type="text" ng-model="cliente.nome" />
+        <md-input-container>
+            <label>Nome</label>
+            <input type="text" ng-model="cliente.nome"/>
+        </md-input-container>
 
-        E-mail:
-        <input type="text" ng-model="cliente.email" />
 
-        <button ng-click="salvar()"> Salvar </button>
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="cliente.email" type="email">
+        </md-input-container>
+
+
+        <md-button class="md-raised md-primary" ng-click="salvar()">Salvar</md-button>
     </form>
 
+<div ng-cloak>
+    <md-content>
+        <md-list>
+            <md-list-item class="md-3-line md-long-text" ng-repeat="cliente in clientes">
 
-    <li ng-repeat="cliente in clientes">
-
-        {{cliente.id + " "+ cliente.nome +" - " + cliente.email }}
-        <button ng-click="excluir(cliente.id)"> Excluir </button>
-        <button ng-click="editar(cliente)"> Editar </button>
-    </li>
-
-
+                <div class="md-list-item-text">
+                {{cliente.id + " "+ cliente.nome +" - " + cliente.email }}
 
 
+                <button ng-click="excluir(cliente.id)"> Excluir</button>
+                <button ng-click="editar(cliente)"> Editar</button>
+                </div>
 
-</ul>
+            </md-list-item>
+
+        </md-list>
+    </md-content>
+</div>
+
+
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+
+<script src="bower_components/angular-animate/angular-animate.min.js "></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+ß
 
 </body>
 </html>
